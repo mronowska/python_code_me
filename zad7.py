@@ -49,11 +49,20 @@ for i in text:
     finally:
         slownik[i] += 1
 
-[print('Wyraz "{}" wystopuje w tekście "{}" razy\n'.format(word, count)) for word, count in slownik.items()]
+[print('Wyraz "{}" wystopuje w tekście "{}" razy'.format(word, count)) for word, count in slownik.items()]
 
 
+## inne rozwiązanie - z zajęć
+text2 = "Sto lat, sto lat, niech żyje, żyje nam"
+liczba_wystapien_slow = {}
+text = text2.replace(",", "")
+lista_slow = text2.split()
+for slowo in lista_slow:
+    liczba_wystapien = liczba_wystapien_slow.get(slowo, 0)
+    liczba_wystapien_slow[slowo] = liczba_wystapien + 1
 
-text2 = "sto lat sto lat niech zyje zyje nam"
+print(liczba_wystapien_slow)
+
 
 
 
