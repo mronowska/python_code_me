@@ -1,9 +1,13 @@
-#modyfikatory
+#modyfikatory - continue i break
 
-lista = ["Andrzej", "Monika", "Karolina", "Ania"]
+lista = ["Andrzej", "Monika", "Marek", "Karolina", "Ania"]
 
 for imie in lista:
+    print(2 + 1)
     continue
-    print("A")
-    print("B")
-    print("C")
+
+for imie in lista:
+    if imie == "Marek":
+        print("Nie lubimy Marka...")
+        break
+
