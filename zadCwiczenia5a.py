@@ -1,6 +1,5 @@
-i = 2
+def zamien_mile_na_km(mile):
+    km = mile * 1.852
+    print(km)
 
-while i < 10:
-    while i % 2 == 0:
-        print(i)
-    i = i + 1
+zamien_mile_na_km(20)
