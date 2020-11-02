@@ -31,16 +31,19 @@ def main():
     days = int(input("Ile dób chcesz tam spędzić? Wpisz: "))
 
     if destinatnion == "Kanada":
-        print(f"Na loty wydasz {Canada['flight']} PLN")
+        print(f"Na loty wydasz {Canada['flight'] * 2} PLN")
         print(f"Na auto wydasz {Canada['car'] * days} PLN")
         print(f"Na auto wydasz {Canada['hotel'] * days} PLN")
+        print(f"Czyli w sumie: {Canada['flight'] * 2 + Canada['car'] * days + Canada['hotel'] * days} PLN. Warto!")
     elif destinatnion == "Islandia":
-        print(f"Na loty wydasz {Iceland['flight']} PLN")
+        print(f"Na loty wydasz {Iceland['flight'] * 2} PLN")
         print(f"Na auto wydasz {Iceland['car'] * days} PLN")
         print(f"Na auto wydasz {Iceland['hotel'] * days} PLN")
+        print(f"Czyli w sumie: {Iceland['flight'] * 2 + Iceland['car'] * days + Iceland['hotel'] * days} PLN. Warto!")
     elif destinatnion == "Norwegia":
-        print(f"Na loty wydasz {Norway['flight']} PLN")
+        print(f"Na loty wydasz {Norway['flight'] * 2} PLN")
         print(f"Na auto wydasz {Norway['car'] * days} PLN")
         print(f"Na auto wydasz {Norway['hotel'] * days} PLN")
+        print(f"Czyli w sumie: {Norway['flight'] * 2 + Norway['car'] * days + Norway['hotel'] * days} PLN. Warto!")
 
 main()
