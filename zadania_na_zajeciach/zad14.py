@@ -1,27 +1,27 @@
 def dodaj(a, b):
-    return a + b
+    return int(a) + int(b)
 
 def odejmij(a, b):
-    return a - b
+    return int(a) - int(b)
 
 def podziel(a, b):
-    return a / b
+    return int(a) / int(b)
 
 def pomnoz(a, b):
-    return a * b
+    return int(a) * int(b)
 
 def modulo(a, b):
-    return a % b
+    return int(a) % int(b)
 
 def poteguj(a, b):
-    return pow(a, b)
+    return pow(int(a), int(b))
 
 def enter_action():
     action = input("Jakie działanie chcesz wykonać?\n> dodaj,\n> odejmij\n> podziel\n> pomnoz\n> modulo\n> poteguj\n")
     return action
 
-first_number = int(input("Podaj pierwszą liczbę: "))
-sec_number = int(input("Podaj drugą liczbę: "))
+first_number, sec_number = input("Podaj dwie liczby (oddziel spacją): ").split()
+
 print(f"Pierwsza liczba to {first_number}, a druga to {sec_number}.")
 
 list = ["dodaj", "odejmij", "pomnoz", "podziel", "modulo", "poteguj"]
@@ -56,8 +56,8 @@ operations = {
 }
 
 if action in operations:
-    operations = operations[action]
-    result = operations(first_number, sec_number)
+    operation = operations[action]
+    result = operation(first_number, sec_number)
     print(result)
 
 
