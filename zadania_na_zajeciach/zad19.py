@@ -1,4 +1,4 @@
-def numbers_function():
+def main():
     numbers = []
     numbers = input("Podaj liczby: ")
     numbers = numbers.split(", ")
@@ -7,8 +7,7 @@ def numbers_function():
     # int_numbers = []
     # for num in numbers:
     #   int_numbers.append(int(num))
-
     print(max(numbers))
 
 
-numbers_function()
+main()
