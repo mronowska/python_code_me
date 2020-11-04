@@ -6,9 +6,9 @@ import random
 import sys
 
 questions = [
-    ["1W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
-    ["2W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
-    ["3W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
+    ["Pyt. 1: Polskim odpowiednikiem baby shower jest:", "bociankowe", "prysznicowe", "500+", "becikowe", 0],
+    ["Pyt. 2: ", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
+    ["Pyt. 3: Czego zakręcane wieczko ma taneczną nazwę?", "szkatułki", "puderniczki", "trumienki", "słoiczka", 3],
     ["4W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
     ["5W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
     ["6W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
@@ -72,15 +72,17 @@ def analyze_answer(questions, question_number):
         choice = input("Twoja odpowiedź: ").upper()
     print(f"Wybrana przez Ciebie odpowiedź, to {choice}")
     if choices[choice] == questions[question_number][5]:
-         print("FSDFSDFSDFSGFDGFGDFDGFDGFDGFGDGFDFD")
+         print("PRAWIDLOWA ODPOWIEDŹ! Niesamowite!")
+         print(question_number)
+         if question_number == 9:
+             print("$$$$$$$$$$$$$$$$$$$$$$$$$ JESTEŚ ZWYCIĘZCĄ $$$$$$$$$$$$$$$$$$$$$$$$$")
+             print("----------------------- KONIEC GRY -----------------------")
+
     else:
         # klucz litery
         print(f"\nPrzykro mi, ale jesteś WIELKIM PRZEGRANYM! Poprawna odpowiedź na to pytanie to {choice}\n")
         print("----------------------- KONIEC GRY -----------------------")
         sys.exit(0)
-
-
-
 
 def func_lifebuoys(questions, question_number):
     print(f"\nWybrałeś koło ratunkowe! Z którego chcesz skorzystać?")
