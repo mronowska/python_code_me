@@ -12,6 +12,5 @@ print(pieski)
 
 #zamiana na krotke
 print(convert(pieski))
-print(type(pieski))
 
 
