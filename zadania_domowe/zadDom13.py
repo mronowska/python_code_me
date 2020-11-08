@@ -1,12 +1,14 @@
-#nie uwzgledniam, jesli niektore wyrazy beda z wielkiej litery, inne z malej. Jesli to konieczne, to wrzuc uwage
+txt = input("Wprowadź listę oddzieloną myślnikami: ")
+txt_splitted = txt.split('-')
+txt_dict = {}
+txt_sorted = ""
 
-words = input("Podaj wyrazy rozdzielone myślnikiem: ")
+for word in txt_splitted:
+    txt_dict[word.lower()] = word
 
-sorted_list = sorted(words.split('-'))
-print(sorted_list)
+keys_sorted = sorted(txt_dict.keys())
 
-separator = '-'
+for key in keys_sorted:
+    txt_sorted += txt_dict[key] + "-"
 
-separator = separator.join(sorted_list)
-print(separator)
-
+print(txt_sorted[:-1])
