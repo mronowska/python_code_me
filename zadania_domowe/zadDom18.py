@@ -2,12 +2,6 @@
 
 import random
 
-pass_len = input("Podaj długość hasła (min. 4 znaki): ")
-
-while int(pass_len) < 4:
-    print("Za krótkie ziomek... Zrób porządne hasło, daj 4 lub więcej")
-    pass_len = input("Podaj długość hasła (min. 4 znaki): ")
-
 def random_index(char:str):
     return random.randint(0, len(char) - 1)
 
@@ -50,4 +44,13 @@ def password(pass_len):
 
     return final_password
 
-print(f"Oto Twoje hasło: {password(pass_len)}")
+def main():
+    pass_len = input("Podaj długość hasła (min. 4 znaki): ")
+
+    while int(pass_len) < 4:
+        print("Za krótkie ziomek... Zrób porządne hasło, daj 4 lub więcej")
+        pass_len = input("Podaj długość hasła (min. 4 znaki): ")
+
+    print(f"Oto Twoje hasło: {password(pass_len)}")
+
+main()
