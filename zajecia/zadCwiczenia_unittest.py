@@ -33,3 +33,8 @@ class TestIsValidNumber(unittest.TestCase):
         expected = False
         actual = is_valid_number("")
         self.assertEqual(actual, expected)
+
+    def test_number_with_dashes(self):
+        expected = False
+        actual = is_valid_number("123-213")
+        self.assertEqual(actual, expected)
