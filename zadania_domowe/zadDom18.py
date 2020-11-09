@@ -2,14 +2,14 @@
 
 import random
 
-pass_len = int(input("Podaj długość hasła (min. 4 znaki): "))
+pass_len = input("Podaj długość hasła (min. 4 znaki): ")
 
 while int(pass_len) < 4:
     print("Za krótkie ziomek... Zrób porządne hasło, daj 4 lub więcej")
     pass_len = input("Podaj długość hasła (min. 4 znaki): ")
 
-def random_index(char):
-    return random.randint(0, len(char))
+def random_index(char:str):
+    return random.randint(0, len(char) - 1)
 
 def password(pass_len):
     your_password_list = []
@@ -24,27 +24,30 @@ def password(pass_len):
 
     supplement_options = []
 
-    if pass_len > 4:
-        temp = pass_len - 4
-        for i in range(temp, pass_len):
-            random_option_number = random.randint(0, 3)
+    if int(pass_len) > 4:
+        temp = int(pass_len) - 4
+        for i in range(temp):
+            random_option_number = random.randint(0, 3) #losuj numer indeksu od 0 do 3
             supplement_options.append(options_list[random_option_number])
-            for x in supplement_options:
-                if x == symbols:
-                    your_password_list.append(symbols[random_index(symbols)])
-                if x == lowercase:
-                    your_password_list.append(lowercase[random_index(lowercase)])
-                if x == uppercase:
-                    your_password_list.append(uppercase[random_index(uppercase)])
-                if x == numbers:
-                    your_password_list.append(numbers[random_index(numbers)])
-    print(f"Pass list = {your_password_list}")
-    your_password = your_password_list + pass_list_required
-    str = ""
+
+        for x in supplement_options:
+            if x == symbols:
+                your_password_list.append(symbols[random_index(symbols)])
+            elif x == lowercase:
+                your_password_list.append(lowercase[random_index(lowercase)])
+            elif x == uppercase:
+                your_password_list.append(uppercase[random_index(uppercase)])
+            elif x == numbers:
+                your_password_list.append(numbers[random_index(numbers)])
+
+    your_password = []
+    your_password.extend(your_password_list)
+    your_password.extend(pass_list_required)
+
+    final_password = ""
     for ele in your_password:
-        str += ele
+        final_password += ele
 
-    return str
+    return final_password
 
-print(password(pass_len))
-#print(listToString(password(pass_len)))
+print(f"Oto Twoje hasło: {password(pass_len)}")
