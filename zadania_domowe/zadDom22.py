@@ -13,5 +13,6 @@ def policz_litery(sentence, num):
     c = collections.Counter(sentence)
     print(f"Najpopularniejsze znaki to: {c.most_common(num)}")
 
-policz_litery(pobierz_dane(), 100)
+tekst = pobierz_dane()
+policz_litery(tekst, len(tekst))
 policz_litery(odczytaj_plik(), 4)
