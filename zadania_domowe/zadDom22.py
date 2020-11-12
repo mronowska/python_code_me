@@ -1,4 +1,17 @@
-import csv
+import collections
 
-with open("pan_tadeusz.txt", encoding = "utf-8") as csvfile:
-    reader = csv.reader(csvfile)
+def pobierz_dane():
+    sentence = input("Podaj jakieś długie zdanie: ")
+    return sentence
+
+def odczytaj_plik():
+    filepath = "pan_tadeusz.txt"
+    f = open(filepath, "r", encoding="utf-8")
+    return f.read()
+
+def policz_litery(sentence, num):
+    c = collections.Counter(sentence)
+    print(f"Najpopularniejsze znaki to: {c.most_common(num)}")
+
+policz_litery(pobierz_dane(), 100)
+policz_litery(odczytaj_plik(), 4)
