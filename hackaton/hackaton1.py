@@ -5,17 +5,20 @@
 import random
 import sys
 
+
 questions = [
     ["Pyt. 1: Polskim odpowiednikiem baby shower jest:", "bociankowe", "prysznicowe", "500+", "becikowe", 0],
-    ["Pyt. 2: ", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
-    ["Pyt. 3: Czego zakręcane wieczko ma taneczną nazwę?", "szkatułki", "puderniczki", "trumienki", "słoiczka", 3],
-    ["4W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
-    ["5W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
-    ["6W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
-    ["7W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
-    ["8W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
-    ["9W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3],
-    ["0W którym z miast znajdują się korty Flushing Meadows?", "W Londynie", "W Paryżu", "W Nowym Jorku", "We Wiedniu", 3]
+    ["Pyt. 2: W piosence Dwa plus Jeden pada propozycja: 'Chodź pomaluj mój świat...", "niech wygląda jak kwiat'", "mam już dość szarych krat'", "na żółto i na niebiesko'", "bo świat jest dziś pod kreską'", 2],
+    ["Pyt. 3: Co jest tradycyjnym środkiem transportu amiszów?", "motorówka", "zaprzęg", "śnieżny skuter", "motocykl", 1],
+    ["Pyt. 4: Pęd wyrosły z nieuszlachetnionej podkładki to:", "kot albo pies", "wilk albo dzik", "koń albo krowa", "baran albo kozioł", 1],
+    ["Pyt. 5: Tytułowa wataha z serialu wyreżyserowanego m.in. przez Kasię Adamik to:", "wilcza rodzina", "rosyjscy szpiedzy", "strażnicy graniczni", "uchodźcy ze Wschodu", 2],
+    ["Pyt. 6: Których bierek w bierkach jest najwięcej?", "wioseł", "bosaków", "trójzębów", "oszczepów", 3],
+    ["Pyt. 7: W jakiej bitwie miał swój udział sławny w Polsce i Szkocji kapral niedźwiedź o imieniu Wojtek?", "pod Grunwaldem", "pod Wiedniem", "pod Monte Cassino", "o Anglię", 2],
+    ["Pyt. 8: Aorta wychodzi z lewej komory serca, a kończy się:", "w prawej komorze", "w jamie brzusznej", "w płucach", "w mózgu", 1],
+    ["Pyt. 9: Autor dwóch pozycji - 'Książki, którą napisałem, żeby mieć na dziwki i narkotyki' i 'Książki, którą napisałem, żeby mieć na odwyk' to:", "Marek Raczkowski", "Maciej Maleńczuk", "Kamil Durczok", "Witkacy", 3],
+    ["Pyt. 10: Symbol waluty euro to stylizowana litera grecka. Która?", "beta", "heta", "eta", "epsilon", 3],
+["Pyt. 11: Za 30 judaszowych srebrników arcykapłani kupili kawałek ziemi nazywany Polem Garncarza, który przeznaczyli na:", "plantację oliwek", "wybieg dla lwów", "cmentarz dla cudzoziemców", "targowisko", 2],
+["Pyt. 12 ZA MILION!!!!: Ile to jest 1111 razy 1111, jeśli 1 razy 1 to 1, a 11 razy 11 to 121", "12 321", "1 234 321", "111 111 111", "123 454 321", 1]
 ]
 
 lifebuoys = [
@@ -23,6 +26,10 @@ lifebuoys = [
     "pytanie do publiczności",
     "50/50"
 ]
+
+def add_score(question_number):
+    score = [500, 1000, 2000, 5000, 10000, 20000, 40000, 75000, 125000, 250000, 500000, 1000000]
+    return score[question_number]
 
 def welcome():
     print("--------Witaj w grze Milionerzy!--------\n")
@@ -48,18 +55,19 @@ def audience():
     index = lifebuoys.index("pytanie do publiczności")
     del lifebuoys[index]
 
-def fifty_fifty():
+def fifty_fifty(questions, question_number, right_answer_number):
     print("50/50 - to Twój wybór! Oto pozycje, które zostają (pozostałe dwie odrzucamy!)")
-    first_option = random.randint(0, 4)
+    first_option = right_answer_number
     sec_option = random.randint(0, 4)
+    print(sec_option)
     while first_option == sec_option:
         sec_option = random.randint(0, 4)
+    print(f"Pozostają opcje: {questions[question_number][first_option+1]} oraz {questions[question_number][sec_option+1]}! Pozostałe odrzucamy...")
     index = lifebuoys.index("50/50")
     del lifebuoys[index]
 
-    ##tu do poprawy - trzeba znać poprawną odpowiedź i na tym się oprzeć
-
 def analyze_answer(questions, question_number):
+
     choices = {
                   "A" : 0,
                   "B" : 1,
@@ -73,8 +81,8 @@ def analyze_answer(questions, question_number):
     print(f"Wybrana przez Ciebie odpowiedź, to {choice}")
     if choices[choice] == questions[question_number][5]:
          print("PRAWIDLOWA ODPOWIEDŹ! Niesamowite!")
-         print(question_number)
-         if question_number == 9:
+         print(f"Masz na koncie aż {add_score(question_number)} zł!!! $$$")
+         if question_number == 11:
              print("$$$$$$$$$$$$$$$$$$$$$$$$$ JESTEŚ ZWYCIĘZCĄ $$$$$$$$$$$$$$$$$$$$$$$$$")
              print("----------------------- KONIEC GRY -----------------------")
 
@@ -103,7 +111,7 @@ def func_lifebuoys(questions, question_number):
         audience()
         analyze_answer(questions, question_number)
     if chosen_lifebuoy == "C":
-        fifty_fifty()
+        fifty_fifty(questions, question_number, questions[question_number][5])
         analyze_answer(questions, question_number)
 
 
@@ -130,7 +138,7 @@ def ask_question(questions, question_number):
                 "Wprowadzony znak jest niepoprawny. Wpisz 't' jeśli chcesz skorzystać z pomocy lub 'n' jeśli nie chcesz")
             is_lifebuoy = input("Czy chcesz skorzystać z koła ratunkowego?[t/n]: ").upper()
         if is_lifebuoy == "T":
-            func_lifebuoys()
+            func_lifebuoys(questions, question_number)
             lifebuoys_flag = True
             wait = input()
         if is_lifebuoy == "N":
