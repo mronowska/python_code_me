@@ -5,7 +5,6 @@ import ask_and_answer
 
 ### questions - na przyszłość pobierać z pliku ###
 
-
 questions = [
     ["Pyt. 1: Polskim odpowiednikiem baby shower jest:", "bociankowe", "prysznicowe", "500+", "becikowe", 0],
     ["Pyt. 2: W piosence Dwa plus Jeden pada propozycja: 'Chodź pomaluj mój świat...", "niech wygląda jak kwiat'", "mam już dość szarych krat'", "na żółto i na niebiesko'", "bo świat jest dziś pod kreską'", 2],
@@ -17,8 +16,8 @@ questions = [
     ["Pyt. 8: Aorta wychodzi z lewej komory serca, a kończy się:", "w prawej komorze", "w jamie brzusznej", "w płucach", "w mózgu", 1],
     ["Pyt. 9: Autor dwóch pozycji - 'Książki, którą napisałem, żeby mieć na dziwki i narkotyki' i 'Książki, którą napisałem, żeby mieć na odwyk' to:", "Marek Raczkowski", "Maciej Maleńczuk", "Kamil Durczok", "Witkacy", 3],
     ["Pyt. 10: Symbol waluty euro to stylizowana litera grecka. Która?", "beta", "heta", "eta", "epsilon", 3],
-["Pyt. 11: Za 30 judaszowych srebrników arcykapłani kupili kawałek ziemi nazywany Polem Garncarza, który przeznaczyli na:", "plantację oliwek", "wybieg dla lwów", "cmentarz dla cudzoziemców", "targowisko", 2],
-["Pyt. 12 ZA MILION!!!!: Ile to jest 1111 razy 1111, jeśli 1 razy 1 to 1, a 11 razy 11 to 121", "12 321", "1 234 321", "111 111 111", "123 454 321", 1]
+    ["Pyt. 11: Za 30 judaszowych srebrników arcykapłani kupili kawałek ziemi nazywany Polem Garncarza, który przeznaczyli na:", "plantację oliwek", "wybieg dla lwów", "cmentarz dla cudzoziemców", "targowisko", 2],
+    ["Pyt. 12 ZA MILION!!!!: Ile to jest 1111 razy 1111, jeśli 1 razy 1 to 1, a 11 razy 11 to 121", "12 321", "1 234 321", "111 111 111", "123 454 321", 1]
 ]
 
 lifebuoys = [

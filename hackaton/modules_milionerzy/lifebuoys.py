@@ -33,28 +33,6 @@ def fifty_fifty(questions, question_number, right_answer_number):
     index = initial.lifebuoys.index("50/50")
     del initial.lifebuoys[index]
 
-    def func_lifebuoys(questions, question_number):
-        print(f"\nWybrałeś koło ratunkowe! Z którego chcesz skorzystać?")
-        if initial.lifebuoys.count("telefon do przyjaciela") != 0:
-            print("A. Telefon do przyjaciela")
-        if initial.lifebuoys.count("pytanie do publiczności") != 0:
-            print("B. Pytanie do publiczności")
-        if initial.lifebuoys.count("50/50") != 0:
-            print("C. 50/50")
-        chosen_lifebuoy = input("Wybieram koło: ").upper()
-        while chosen_lifebuoy != "A" and chosen_lifebuoy != "B" and chosen_lifebuoy != "C":
-            print("Niepoprawna wartość... spróbuj jeszcze raz.")
-            chosen_lifebuoy = input("Twój wybór: ").upper()
-        if chosen_lifebuoy == "A":
-            phone_call()
-            ask_and_answer.analyze_answer(questions, question_number)
-        if chosen_lifebuoy == "B":
-            audience()
-            ask_and_answer.analyze_answer(questions, question_number)
-        if chosen_lifebuoy == "C":
-            fifty_fifty(questions, question_number, questions[question_number][5])
-            ask_and_answer.analyze_answer(questions, question_number)
-
 def func_lifebuoys(questions, question_number):
     print(f"\nWybrałeś koło ratunkowe! Z którego chcesz skorzystać?")
     if initial.lifebuoys.count("telefon do przyjaciela") != 0:
@@ -69,6 +47,29 @@ def func_lifebuoys(questions, question_number):
         chosen_lifebuoy = input("Twój wybór: ").upper()
     if chosen_lifebuoy == "A":
         phone_call()
+        ask_and_answer.analyze_answer(questions, question_number)
+    if chosen_lifebuoy == "B":
+        audience()
+        ask_and_answer.analyze_answer(questions, question_number)
+    if chosen_lifebuoy == "C":
+        fifty_fifty(questions, question_number, questions[question_number][5])
+        ask_and_answer.analyze_answer(questions, question_number)
+
+def func_lifebuoys(questions, question_number):
+    print(f"\nWybrałeś koło ratunkowe! Z którego chcesz skorzystać? Możesz wpisać tylko dostępne ponożej litery. Wybranie niedostępnej opcji będzie skutkować brakiem koła ratunkowego.")
+    if initial.lifebuoys.count("telefon do przyjaciela") != 0:
+        print("A. Telefon do przyjaciela")
+    if initial.lifebuoys.count("pytanie do publiczności") != 0:
+        print("B. Pytanie do publiczności")
+    if initial.lifebuoys.count("50/50") != 0:
+        print("C. 50/50")
+    chosen_lifebuoy = input("Wybieram koło: ").upper()
+    while chosen_lifebuoy != "A" and chosen_lifebuoy != "B" and chosen_lifebuoy != "C":
+        print("Niepoprawna wartość... spróbuj jeszcze raz.")
+        chosen_lifebuoy = input("Twój wybór: ").upper()
+    if chosen_lifebuoy == "A":
+        while initial.lifebuoys[0] == "telefon do przyjaciela":
+            phone_call()
         ask_and_answer.analyze_answer(questions, question_number)
     if chosen_lifebuoy == "B":
         audience()
