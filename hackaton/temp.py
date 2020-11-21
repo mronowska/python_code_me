@@ -47,12 +47,12 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-print(f"{bcolors.HEADER}Warning: No active frommets remain. Continue?{bcolors.ENDC}")
-print(f"{bcolors.OKBLUE}Warning: No active frommets remain. Continue?{bcolors.ENDC}")
-print(f"{bcolors.OKGREEN}Warning: No active frommets remain. Continue?{bcolors.ENDC}")
-print(f"{bcolors.FAIL}Warning: No active frommets remain. Continue?{bcolors.ENDC}")
-print(f"{bcolors.ENDC}Warning: No active frommets remain. Continue?{bcolors.ENDC}")
-print(f"{bcolors.BOLD}Warning: No active frommets remain. Continue?{bcolors.ENDC}")
+print(f"{bcolors.HEADER}Warning: No active frommets remain. header?{bcolors.ENDC}")
+print(f"{bcolors.OKBLUE}Warning: No active frommets remain. okblue?{bcolors.ENDC}")
+print(f"{bcolors.OKGREEN}Warning: No active frommets remain. okgreen?{bcolors.ENDC}")
+print(f"{bcolors.FAIL}Warning: No active frommets remain. fail?{bcolors.ENDC}")
+print(f"{bcolors.ENDC}Warning: No active frommets remain. bold?{bcolors.ENDC}")
+print(f"{bcolors.BOLD}Warning: No active frommets remain. okcyan?{bcolors.ENDC}")
 print(f"{bcolors.UNDERLINE}Warning: No active frommets remain. Continue?{bcolors.ENDC}")
 print(f"{bcolors.BOLD}{bcolors.OKCYAN}Warning: No active frommets remain. Continue?{bcolors.ENDC}")
 

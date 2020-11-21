@@ -3,6 +3,7 @@ import csv
 import sys
 import initial
 import lifebuoys
+import colors
 
 def analyze_answer(questions, question_number):
 
@@ -14,39 +15,35 @@ def analyze_answer(questions, question_number):
     }
     choice = input("Twoja odpowiedź na pytanie: ").upper()
     while choice not in choices:
-        print("Niepoprawny znak... Wpisz odpowiedź w formie litery: A, B, C lub D!")
+        print("{colors.colors.BOLD}Niepoprawny znak... Wpisz odpowiedź w formie litery: A, B, C lub D!")
         choice = input("Twoja odpowiedź: ").upper()
-    print(f"Wybrana przez Ciebie odpowiedź, to {choice}")
+    print(f"{colors.colors.BOLD}Wybrana przez Ciebie odpowiedź, to {choice}{colors.colors.ENDC}")
     if int(choices[choice]) == int(questions[question_number][5]):
-         print("PRAWIDLOWA ODPOWIEDŹ! Niesamowite!")
-         print(f"Masz na koncie aż {initial.add_score(question_number)} zł!!! $$$")
+         print(f"""{colors.colors.BOLD}{colors.colors.WARNING}PRAWIDLOWA ODPOWIEDŹ! Niesamowite!\n
+         Masz na koncie aż {initial.add_score(question_number)} zł!!! $$${colors.colors.ENDC}""")
          if question_number == 11:
-             print("$$$$$$$$$$$$$$$$$$$$$$$$$ JESTEŚ ZWYCIĘZCĄ $$$$$$$$$$$$$$$$$$$$$$$$$")
-             print("----------------------- KONIEC GRY -----------------------")
+             print(f"""{colors.colors.BOLD}{colors.colors.WARNING}$$$$$$$$$$$$$$$$$$$$$$$$$ JESTEŚ ZWYCIĘZCĄ $$$$$$$$$$$$$$$$$$$$$$$$$\n----------------------- KONIEC GRY -----------------------{colors.colors.ENDC}""")
 
     else:
         # klucz litery
-        print(f"\nPrzykro mi, ale jesteś WIELKIM PRZEGRANYM! Poprawna odpowiedź na to pytanie to {choice}\n")
-        print("----------------------- KONIEC GRY -----------------------")
+        print(f"""\n{colors.colors.BOLD}{colors.colors.FAIL}Przykro mi, ale jesteś WIELKIM PRZEGRANYM! Poprawna odpowiedź na to pytanie to {choice}\n----------------------- KONIEC GRY -----------------------""")
         sys.exit(0)
 
 def ask_question(questions, question_number):
     lifebuoys_flag = False
-    print("\n###################################################################")
-    print(f"Pytanie numer {question_number+1}: {questions[question_number][0]}")
-    print("###################################################################\n")
+    print(f"""{colors.colors.HEADER}\n###################################################################\nPytanie numer {question_number+1}: {questions[question_number][0]}\n###################################################################\n{colors.colors.ENDC}""")
     #del questions[question_number]
     print("Wskaż poprawną odpowiedź!")
-    print(f"Odpowiedź A: {questions[question_number][1]}")
-    print(f"Odpowiedź B: {questions[question_number][2]}")
-    print(f"Odpowiedź C: {questions[question_number][3]}")
-    print(f"Odpowiedź D: {questions[question_number][4]}\n")
+    print(f"{colors.colors.OKCYAN}Odpowiedź A: {questions[question_number][1]}{colors.colors.ENDC}")
+    print(f"{colors.colors.OKCYAN}Odpowiedź B: {questions[question_number][2]}{colors.colors.ENDC}")
+    print(f"{colors.colors.OKCYAN}Odpowiedź C: {questions[question_number][3]}{colors.colors.ENDC}")
+    print(f"{colors.colors.OKCYAN}Odpowiedź D: {questions[question_number][4]}\n{colors.colors.ENDC}")
+
+
     if len(initial.lifebuoys) > 0 and lifebuoys_flag is False:
-        print("********************************************************************")
-        print("Pamiętaj, że możesz skorzystać z kół ratunkowych! Na tę chwilę masz do wyboru jeszcze:")
+        print(f"""{colors.colors.HEADER}Pamiętaj, że możesz skorzystać z kół ratunkowych! Na tę chwilę masz do wyboru jeszcze:{colors.colors.ENDC}""")
         for lifebuoy in initial.lifebuoys:
-            print(f">>>>>>>>> {lifebuoy}")
-        print("********************************************************************")
+            print(f"{colors.colors.HEADER}>>>>>>>>> {colors.colors.BOLD}{lifebuoy}{colors.colors.ENDC}")
         is_lifebuoy = input("\nCzy chcesz skorzystać z koła ratunkowego?[t/n]: ").upper()
         while (is_lifebuoy != "T" and is_lifebuoy != "N"):
             print(
@@ -59,6 +56,8 @@ def ask_question(questions, question_number):
         if is_lifebuoy == "N":
             analyze_answer(questions, question_number)
     else:
-        print("\n********************************************************************")
-        print("Wykorzystałeś już wszystkie koła ratunkowe! Musisz radzić sobie sam...")
-        print("********************************************************************\n")
+        print(f"{colors.colors.FAIL}\n********************************************************************{colors.colors.ENDC}")
+        print(f"{colors.colors.FAIL}Wykorzystałeś już wszystkie koła ratunkowe! Musisz radzić sobie sam...{colors.colors.ENDC}")
+        print(f"{colors.colors.FAIL}********************************************************************\n{colors.colors.ENDC}")
+
+        analyze_answer(questions, question_number)
