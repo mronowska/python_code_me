@@ -1,4 +1,5 @@
 import random
+import csv
 import sys
 import initial
 import lifebuoys
@@ -16,7 +17,7 @@ def analyze_answer(questions, question_number):
         print("Niepoprawny znak... Wpisz odpowiedź w formie litery: A, B, C lub D!")
         choice = input("Twoja odpowiedź: ").upper()
     print(f"Wybrana przez Ciebie odpowiedź, to {choice}")
-    if choices[choice] == questions[question_number][5]:
+    if int(choices[choice]) == int(questions[question_number][5]):
          print("PRAWIDLOWA ODPOWIEDŹ! Niesamowite!")
          print(f"Masz na koncie aż {initial.add_score(question_number)} zł!!! $$$")
          if question_number == 11:

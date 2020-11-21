@@ -1,8 +1,6 @@
 from faker import Faker
 fake = Faker()
 
-print(fake.name())
+print(fake.profile())
 
-import calculations
-print(calculations.add(1, 2))
 
