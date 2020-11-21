@@ -13,6 +13,13 @@ def analyze_answer(questions, question_number):
                   "C" : 2,
                   "D" : 3
     }
+    # del questions[question_number]
+    print(f"{colors.colors.HEADER}\nPozwól, że powtórzę pytanie nr {question_number + 1}: {questions[question_number][0]}{colors.colors.ENDC}\n")
+    print("Wskaż poprawną odpowiedź!")
+    print(f"{colors.colors.OKCYAN}Odpowiedź A: {questions[question_number][1]}{colors.colors.ENDC}")
+    print(f"{colors.colors.OKCYAN}Odpowiedź B: {questions[question_number][2]}{colors.colors.ENDC}")
+    print(f"{colors.colors.OKCYAN}Odpowiedź C: {questions[question_number][3]}{colors.colors.ENDC}")
+    print(f"{colors.colors.OKCYAN}Odpowiedź D: {questions[question_number][4]}\n{colors.colors.ENDC}")
     choice = input("Twoja odpowiedź na pytanie: ").upper()
     while choice not in choices:
         print("{colors.colors.BOLD}Niepoprawny znak... Wpisz odpowiedź w formie litery: A, B, C lub D!")
