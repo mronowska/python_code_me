@@ -8,15 +8,26 @@ import phone_call
 import fifty_fifty
 import colors
 
+
 def func_lifebuoys(questions, question_number):
     print(f"\nWybrałeś koło ratunkowe! Z którego chcesz skorzystać? Możesz wpisać tylko dostępne ponożej litery. Wybranie niedostępnej opcji będzie skutkować brakiem koła ratunkowego.")
+
+    #telefon do przyjaciela
     if initial.lifebuoys.count("telefon do przyjaciela") != 0:
         print(f"{colors.colors.OKBLUE}A. Telefon do przyjaciela{colors.colors.ENDC}")
+
+    #pytanie do publiczności
     if initial.lifebuoys.count("pytanie do publiczności") != 0:
         print(f"{colors.colors.OKBLUE}B. Pytanie do publiczności{colors.colors.ENDC}")
+
+    #50/50
     if initial.lifebuoys.count("50/50") != 0:
         print(f"{colors.colors.OKBLUE}C. 50/50{colors.colors.ENDC}")
+
+    #wybór koła ratunkowego
     chosen_lifebuoy = input("Wybieram koło: ").upper()
+
+
     while chosen_lifebuoy != "A" and chosen_lifebuoy != "B" and chosen_lifebuoy != "C":
         print("Niepoprawna wartość... spróbuj jeszcze raz.")
         chosen_lifebuoy = input("Twój wybór: ").upper()
