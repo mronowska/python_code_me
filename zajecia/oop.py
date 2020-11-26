@@ -1,5 +1,5 @@
 class Prostokat:
-    def __init__(self, dl, szer, x = "0", y="0"):
+    def __init__(self, dl, szer, x = 0, y=0):
         self.dl = dl
         self.szer = szer
         self.x = x
@@ -15,7 +15,7 @@ def drukuj(prostokat, nr):
     print(f"Szerokość: {prostokat.szer}")
     print(f"X: {prostokat.x}")
     print(f"Y: {prostokat.y}")
-    print(f"Pole: {int(prostokat.dl) * int(prostokat.szer)}\n")
+    print(f"Pole: {prostokat.dl * prostokat.szer}\n")
 
 drukuj(prostokat1, 1)
 drukuj(prostokat2, 2)
