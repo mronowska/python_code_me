@@ -32,4 +32,4 @@ class Post:
 
 first_post = Post("Monia", "To jest mój post", "Gdańsk")
 sec_post = Post("Andrzej", "To mój poscik", "Montreal")
-first_post.edit("hej hej zmiana posta zmiana treści")
+first_post.edit("hej hej zmiana posta zfdgdmiana treści")
