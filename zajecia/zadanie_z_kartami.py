@@ -19,6 +19,8 @@ class CardsDeck:
         return last_card
 
 
+
+
 deck1 = CardsDeck()
 print(deck1.cards)
 
@@ -27,3 +29,5 @@ print(deck1.cards)
 
 #podaj ostatnią kartę z potasowanych
 print(deck1.give_me_card())
+
+print(deck1)
