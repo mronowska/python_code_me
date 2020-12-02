@@ -18,5 +18,6 @@ def zamknij_tadeusza(file):
 
 tekst = pobierz_dane()
 policz_litery(tekst, len(tekst))
+print("a dla tadeusza: ")
 policz_litery(odczytaj_plik().read(), 4)
 zamknij_tadeusza(odczytaj_plik())
