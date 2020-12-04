@@ -1,4 +1,5 @@
 import os, collections
+from collections import Counter
 
 def writeToFile():
     try:
@@ -27,17 +28,16 @@ def printMostCommonLetter():
     f = open("plik.txt", "r")
     content = f.read()
     c = collections.Counter(content)
-    print(f"Najpopularniejszy znak to: {c.most_common(1)[0][0]}")
+    print(f"Najpopularniejszy znak to: {c.most_common(1)}")
     f.close()
 
 def printMostCommonWord(words):
-    text = ""
+    text2 = ""
     for word in words:
-            text += word
-    words2 = text.split(" ")
-
-    c = collections.Counter(words)
-    print(f"Najpopularniejszy wyraz to: {c.most_common(1)[0][0]}")
+            text2 += word
+    myDict = Counter(text2.split())
+    myList = [k for k, v in myDict.items() if v > 1]
+    print(myList)
 
 writeToFile()
 printAllLines(readFile())
