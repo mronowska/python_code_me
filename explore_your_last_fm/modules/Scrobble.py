@@ -8,7 +8,7 @@ class Scrobble:
     def __init__(self, index):
         self.index = index
 
-    def create_tab_of_songs(self, tab_name):
+    def create_tab_of_songs(self, tab_name, chartlist_atribute):
         try:
             init.WebDriverWait(init.driver, 10).until(
                 init.EC.presence_of_element_located((init.By.CLASS_NAME, 'tracklist-section'))
@@ -16,7 +16,7 @@ class Scrobble:
 
             sections = init.driver.find_elements_by_class_name('tracklist-section')
             for tracklist_section in sections:
-                titles = tracklist_section.find_elements_by_class_name('chartlist-name')
+                titles = tracklist_section.find_elements_by_class_name(chartlist_atribute)
 
                 for song_title in titles:
                     title = song_title.find_element_by_tag_name('a')

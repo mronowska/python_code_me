@@ -12,4 +12,4 @@ def read_file(filename, index):
         songs = text.split(", ")
         # for song in songs:
         #     print(song)
-        print(f"Piosenka pod indeksem {index} to -> {songs[index]}")
+        return songs[index]
