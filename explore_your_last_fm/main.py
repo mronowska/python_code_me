@@ -24,7 +24,6 @@ try:
     chartlist_row = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CLASS_NAME, 'chartlist-row'))
     )
-
     artists = chartlist_row.find_elements_by_class_name('chartlist-name')
 
     for artist in artists:
@@ -33,6 +32,7 @@ try:
 
 finally:
     print("Zamykam")
+    driver.close()
 
 
 #count_row = driver.find_elements_by_class_name('chartlist-row')
