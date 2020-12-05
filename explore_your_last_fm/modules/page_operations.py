@@ -11,3 +11,6 @@ def display_songs_list():
 def next_page_of_songs_list():
     search_more_link = init.driver.find_element_by_link_text('Następna')
     search_more_link.click()
+
+def go_to_specific_page(page_index):
+     init.driver.get(init.profile_link + init.user + '/library?page=' + str(page_index))

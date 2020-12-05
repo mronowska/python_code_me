@@ -26,9 +26,8 @@ class Scrobble:
             #zwraca tablicę tytułów dla aktualnie wyświetlanej strony
             return tab_name
 
-        finally:
-                pass
-                #init.driver.quit()
+        except:
+                print("Nie znaleziono klasy tracklist-section")
 
     def scrobbles_from_all_time(self):
         searh_scrobbles_from_all_time = init.driver.find_element_by_class_name('header-metadata-display')

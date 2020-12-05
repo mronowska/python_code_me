@@ -9,9 +9,12 @@ count_songs = 0
 PATH = "C:\Program Files (x86)\chromedriver.exe"
 
 driver = webdriver.Chrome(PATH)
-driver.get('https://www.last.fm/pl/user/Dess066')
 
-class color:
+profile_link = 'https://www.last.fm/pl/user/'
+user = 'Dess066'
+driver.get(profile_link + user)
+
+class Color:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKCYAN = '\033[96m'

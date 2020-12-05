@@ -62,6 +62,6 @@ how_many_songs_passed_by = all_scrobbles - your_index
 
 print(f"Jaki indeks w pliku będziemy pobierać: {how_many_songs_passed_by}")
 
-print(f"Tytuł piosenki, której szukasz pod indeksem {your_index} to {init.color.WARNING}'{handle_file.read_file('my_songs_name.csv', how_many_songs_passed_by)}' {init.color.FAIL}{handle_file.read_file('my_songs_artist.csv', how_many_songs_passed_by)}{init.color.ENDC} - niezły numer!")
+print(f"Tytuł piosenki, której szukasz pod indeksem {your_index} to {init.Color.WARNING}'{handle_file.read_file('my_songs_name.csv', how_many_songs_passed_by)}' {init.Color.FAIL}{handle_file.read_file('my_songs_artist.csv', how_many_songs_passed_by)}{init.Color.ENDC} - niezły numer!")
 
 
