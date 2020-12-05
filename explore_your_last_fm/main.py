@@ -8,7 +8,7 @@ import Scrobble
 
 songs_tab = []
 songs_tab_artist = []
-your_index = 101261
+your_index = 101159
 
 #tworzę objekt klasy
 song = Scrobble.Scrobble(your_index)
@@ -43,7 +43,10 @@ if page_index > 1:
         # page_operations.next_page_of_songs_list()
         time.sleep(1)
 
+songs_tab = song.create_tab_of_songs(songs_tab, 'chartlist-name')
 time.sleep(1)
+songs_tab_artist = song.create_tab_of_songs(songs_tab_artist, 'chartlist-artist')
+
 
 try:
     os.remove("my_songs_name.csv")
@@ -58,7 +61,7 @@ handle_file.write_tab_to_file('my_songs_artist.csv', songs_tab_artist)
 print(f"Liczba wszystkich scrobbli na dzień {datetime.date.today()} to: {all_scrobbles}")
 print(f"Indeks, pod którym szukasz piosenki: {your_index}")
 
-how_many_songs_passed_by = all_scrobbles - your_index
+how_many_songs_passed_by = (all_scrobbles - your_index) - (page_index-1)*50
 
 print(f"Jaki indeks w pliku będziemy pobierać: {how_many_songs_passed_by}")
 
